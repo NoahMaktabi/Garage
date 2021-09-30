@@ -1,6 +1,6 @@
 ﻿namespace Domain.Vehicles
 {
-    public class Bike : Vehicle
+    public class Truck : Vehicle
     {
         
     }
