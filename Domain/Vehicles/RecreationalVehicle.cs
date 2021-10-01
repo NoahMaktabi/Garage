@@ -1,8 +1,8 @@
 ﻿namespace Domain.Vehicles
 {
-    public class Bus : Vehicle
+    public class RecreationalVehicle : Vehicle
     {
-        public FuelType FuelType { get; set; }
         public double Height { get; set; }
+        public int Wheels { get; set; }
     }
 }
