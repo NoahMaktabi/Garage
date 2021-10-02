@@ -1,5 +1,25 @@
 [
   {
-
+    "LicensePlate": "RVV445",
+    "Make": "BMW",
+    "Model": "RV11",
+    "Year": 2009,
+    "Color": "Azure"
+  },
+  {
+    "LicensePlate": "RVV645",
+    "Make": "Seat",
+    "Model": "RV51",
+    "Year": 2011,
+    "Color": "Azure"
+  },
+  {
+    "Height": 3.0,
+    "Wheels": 6,
+    "LicensePlate": "RVV754",
+    "Make": "Kia",
+    "Model": "RV41",
+    "Year": 2016,
+    "Color": "Azure"
   }
 ]

@@ -1,5 +1,27 @@
 [
   {
-
+    "LicensePlate": "TRK233",
+    "Make": "Scania",
+    "Model": "Monster",
+    "Year": 2011,
+    "Color": "Aqua"
+  },
+  {
+    "LicensePlate": "TRK232",
+    "Make": "Scania",
+    "Model": "Monster",
+    "Year": 2006,
+    "Color": "Yellow"
+  },
+  {
+    "Wheels": 8,
+    "WithTrailer": false,
+    "CoolerTruck": true,
+    "Height": 2.84,
+    "LicensePlate": "TRK234",
+    "Make": "Scania",
+    "Model": "Monster",
+    "Year": 2015,
+    "Color": "Black"
   }
 ]

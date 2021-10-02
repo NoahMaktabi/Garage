@@ -1,3 +1,47 @@
-{
-
-}
+[
+  {
+    "Type": 0,
+    "FuelType": 0,
+    "LicensePlate": "ABC123",
+    "Make": "Volvo",
+    "Model": "S60",
+    "Year": 2010,
+    "Color": "Blue"
+  },
+  {
+    "Type": 0,
+    "FuelType": 0,
+    "LicensePlate": "ADD123",
+    "Make": "Volvo",
+    "Model": "C90",
+    "Year": 2012,
+    "Color": "Wheat"
+  },
+  {
+    "Type": 0,
+    "FuelType": 0,
+    "LicensePlate": "AYT123",
+    "Make": "Volvo",
+    "Model": "D80",
+    "Year": 2014,
+    "Color": "Black"
+  },
+  {
+    "Type": 1,
+    "FuelType": 0,
+    "LicensePlate": "AKJ123",
+    "Make": "Volvo",
+    "Model": "V40",
+    "Year": 2011,
+    "Color": "White"
+  },
+  {
+    "Type": 2,
+    "FuelType": 1,
+    "LicensePlate": "CAR232",
+    "Make": "Nissan",
+    "Model": "Sunny",
+    "Year": 2010,
+    "Color": "AliceBlue"
+  }
+]

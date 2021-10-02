@@ -1,5 +1,25 @@
 [
   {
-
+    "LicensePlate": "MCC111",
+    "Make": "Yamaha",
+    "Model": "MC12",
+    "Year": 2019,
+    "Color": "Azure"
+  },
+  {
+    "LicensePlate": "MCC124",
+    "Make": "Suzuki",
+    "Model": "MC15",
+    "Year": 2020,
+    "Color": "Azure"
+  },
+  {
+    "Type": "Race",
+    "HasAlarmSystem": true,
+    "LicensePlate": "MCC952",
+    "Make": "BMW",
+    "Model": "MC16",
+    "Year": 2009,
+    "Color": "Azure"
   }
 ]

@@ -10,11 +10,11 @@ namespace Persistence
 {
     public static class DataHandler
     {
-        private const string CarFilePath = "ParkedCars.json";
-        private const string TruckFilePath = "ParkedTrucks.json";
-        private const string RvFilePath = "ParkedRvs.json";
-        private const string McFilePath = "ParkedMcs.json";
-        private const string BusFilePath = "ParkedBuses.json";
+        private const string CarFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedCars.json";
+        private const string TruckFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedTrucks.json";
+        private const string RvFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedRvs.json";
+        private const string McFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedMcs.json";
+        private const string BusFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedBuses.json";
 
 
         public static async Task AddToParkedVehicles<T>(T vehicle, VehicleType vType) where T : Vehicle
@@ -34,7 +34,7 @@ namespace Persistence
                     await WriteToFile(RvFilePath, vehicle);
                     break;
                 case VehicleType.Truck:
-                    await WriteToFile(BusFilePath, vehicle);
+                    await WriteToFile(TruckFilePath, vehicle);
                     break;
             }
         }
@@ -78,9 +78,12 @@ namespace Persistence
 
         private static async Task WriteToFile<T>(string path, T vehicle) where T : Vehicle
         {
-            var jsonToWrite = JsonConvert.SerializeObject(vehicle, Formatting.Indented);
-            await using var writer = new StreamWriter(path);
+            var list = await ReadFile<T>(path);
+            list.Add(vehicle);
             
+            var jsonToWrite = JsonConvert.SerializeObject(list, Formatting.Indented);
+            await using var writer = new StreamWriter(path, false);
+           
             await writer.WriteAsync(jsonToWrite);
         }
     }
