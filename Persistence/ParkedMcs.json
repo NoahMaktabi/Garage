@@ -4,22 +4,33 @@
     "Make": "Yamaha",
     "Model": "MC12",
     "Year": 2019,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 10
   },
   {
     "LicensePlate": "MCC124",
     "Make": "Suzuki",
     "Model": "MC15",
     "Year": 2020,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 11
   },
   {
-    "Type": "Race",
-    "HasAlarmSystem": true,
     "LicensePlate": "MCC952",
     "Make": "BMW",
     "Model": "MC16",
     "Year": 2009,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 12
+  },
+  {
+    "Type": "Cross",
+    "HasAlarmSystem": true,
+    "LicensePlate": "MCG762",
+    "Make": "Yamaha",
+    "Model": "H77",
+    "Year": 2013,
+    "Color": "Black",
+    "ParkingSpotNumber": 13
   }
 ]

@@ -1,0 +1,394 @@
+[
+  {
+    "Id": 1,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "ABC123",
+      "Make": "Volvo",
+      "Model": "S60",
+      "Year": 2010,
+      "Color": "Blue",
+      "ParkingSpotNumber": 1
+    }
+  },
+  {
+    "Id": 2,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "ADD123",
+      "Make": "Volvo",
+      "Model": "C90",
+      "Year": 2012,
+      "Color": "Wheat",
+      "ParkingSpotNumber": 2
+    }
+  },
+  {
+    "Id": 3,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "AYT123",
+      "Make": "Volvo",
+      "Model": "D80",
+      "Year": 2014,
+      "Color": "Black",
+      "ParkingSpotNumber": 3
+    }
+  },
+  {
+    "Id": 4,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "AKJ123",
+      "Make": "Volvo",
+      "Model": "V40",
+      "Year": 2011,
+      "Color": "White",
+      "ParkingSpotNumber": 4
+    }
+  },
+  {
+    "Id": 5,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "CAR232",
+      "Make": "Nissan",
+      "Model": "Sunny",
+      "Year": 2010,
+      "Color": "AliceBlue",
+      "ParkingSpotNumber": 5
+    }
+  },
+  {
+    "Id": 6,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "BUS123",
+      "Make": "Volvo",
+      "Model": "B40",
+      "Year": 2016,
+      "Color": "Azure",
+      "ParkingSpotNumber": 6
+    }
+  },
+  {
+    "Id": 7,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "BUS133",
+      "Make": "Volvo",
+      "Model": "B40",
+      "Year": 2018,
+      "Color": "Azure",
+      "ParkingSpotNumber": 7
+    }
+  },
+  {
+    "Id": 8,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "BUS143",
+      "Make": "Volvo",
+      "Model": "B40",
+      "Year": 2019,
+      "Color": "Azure",
+      "ParkingSpotNumber": 8
+    }
+  },
+  {
+    "Id": 9,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "BUS777",
+      "Make": "Volvo",
+      "Model": "B99",
+      "Year": 2016,
+      "Color": "White",
+      "ParkingSpotNumber": 9
+    }
+  },
+  {
+    "Id": 10,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "MCC111",
+      "Make": "Yamaha",
+      "Model": "MC12",
+      "Year": 2019,
+      "Color": "Azure",
+      "ParkingSpotNumber": 10
+    }
+  },
+  {
+    "Id": 11,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "MCC124",
+      "Make": "Suzuki",
+      "Model": "MC15",
+      "Year": 2020,
+      "Color": "Azure",
+      "ParkingSpotNumber": 11
+    }
+  },
+  {
+    "Id": 12,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "MCC952",
+      "Make": "BMW",
+      "Model": "MC16",
+      "Year": 2009,
+      "Color": "Azure",
+      "ParkingSpotNumber": 12
+    }
+  },
+  {
+    "Id": 13,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "MCG762",
+      "Make": "Yamaha",
+      "Model": "H77",
+      "Year": 2013,
+      "Color": "Black",
+      "ParkingSpotNumber": 13
+    }
+  },
+  {
+    "Id": 14,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "RVV445",
+      "Make": "BMW",
+      "Model": "RV11",
+      "Year": 2009,
+      "Color": "Azure",
+      "ParkingSpotNumber": 14
+    }
+  },
+  {
+    "Id": 15,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "RVV645",
+      "Make": "Seat",
+      "Model": "RV51",
+      "Year": 2011,
+      "Color": "Azure",
+      "ParkingSpotNumber": 15
+    }
+  },
+  {
+    "Id": 16,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "RVV754",
+      "Make": "Kia",
+      "Model": "RV41",
+      "Year": 2016,
+      "Color": "Azure",
+      "ParkingSpotNumber": 16
+    }
+  },
+  {
+    "Id": 17,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "TRK233",
+      "Make": "Scania",
+      "Model": "Monster",
+      "Year": 2011,
+      "Color": "Aqua",
+      "ParkingSpotNumber": 17
+    }
+  },
+  {
+    "Id": 18,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "TRK232",
+      "Make": "Scania",
+      "Model": "Monster",
+      "Year": 2006,
+      "Color": "Yellow",
+      "ParkingSpotNumber": 18
+    }
+  },
+  {
+    "Id": 19,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "LicensePlate": "TRK234",
+      "Make": "Scania",
+      "Model": "Monster",
+      "Year": 2015,
+      "Color": "Black",
+      "ParkingSpotNumber": 19
+    }
+  },
+  {
+    "Id": 21,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 22,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 23,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 24,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 25,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 26,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 27,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 28,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 29,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 30,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 31,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 32,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 33,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 34,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 35,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 36,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 37,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 38,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 39,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 40,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 41,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 42,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 43,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 44,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 45,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 46,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 47,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 48,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 49,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 50,
+    "IsAvailable": true,
+    "ParkedVehicle": null
+  },
+  {
+    "Id": 20,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "FuelType": 1,
+      "Height": 3.6,
+      "LicensePlate": "BUS987",
+      "Make": "MAN",
+      "Model": "ManPower",
+      "Year": 2001,
+      "Color": "Black",
+      "ParkingSpotNumber": 20
+    }
+  }
+]

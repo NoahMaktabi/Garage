@@ -4,14 +4,20 @@
     "Make": "BMW",
     "Model": "RV11",
     "Year": 2009,
-    "Color": "Azure"
+    "Color": "Azure",
+    "Height": 3.0,
+    "Wheels": 6,
+    "ParkingSpotNumber": 14
   },
   {
     "LicensePlate": "RVV645",
     "Make": "Seat",
     "Model": "RV51",
     "Year": 2011,
-    "Color": "Azure"
+    "Color": "Azure",
+    "Height": 3.0,
+    "Wheels": 6,
+    "ParkingSpotNumber": 15
   },
   {
     "Height": 3.0,
@@ -20,6 +26,7 @@
     "Make": "Kia",
     "Model": "RV41",
     "Year": 2016,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 16
   }
 ]

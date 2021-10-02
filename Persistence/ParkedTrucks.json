@@ -4,14 +4,24 @@
     "Make": "Scania",
     "Model": "Monster",
     "Year": 2011,
-    "Color": "Aqua"
+    "Color": "Aqua",
+    "Wheels": 8,
+    "WithTrailer": false,
+    "CoolerTruck": true,
+    "Height": 2.84,
+    "ParkingSpotNumber": 17
   },
   {
     "LicensePlate": "TRK232",
     "Make": "Scania",
     "Model": "Monster",
     "Year": 2006,
-    "Color": "Yellow"
+    "Color": "Yellow",
+    "Wheels": 8,
+    "WithTrailer": false,
+    "CoolerTruck": true,
+    "Height": 2.84,
+    "ParkingSpotNumber": 18
   },
   {
     "Wheels": 8,
@@ -22,6 +32,7 @@
     "Make": "Scania",
     "Model": "Monster",
     "Year": 2015,
-    "Color": "Black"
+    "Color": "Black",
+    "ParkingSpotNumber": 19
   }
 ]

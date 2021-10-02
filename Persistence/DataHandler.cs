@@ -17,6 +17,7 @@ namespace Persistence
         private const string RvFilePath = @"..\..\..\..\Persistence\ParkedRvs.json";
         private const string McFilePath = @"..\..\..\..\Persistence\ParkedMcs.json";
         private const string BusFilePath = @"..\..\..\..\Persistence\ParkedBuses.json";
+        private const string ParkingSpotsFilePath = @"..\..\..\..\Persistence\ParkingsSpots.json";
         #endregion
 
         #region RemoveVehicleFromFile
@@ -128,6 +129,69 @@ namespace Persistence
         }
         #endregion
 
+        #region SetParkingSpots
+
+        /// <summary>
+        /// Provide the capacity of the garage (int) and a list of parked vehicles. The method will rewrite the file
+        /// containing the parking spots with a new list to make sure that the data is correct. 
+        /// </summary>
+        /// <param name="garageCapacity"></param>
+        /// <param name="vehicles"></param>
+        /// <returns>Void</returns>
+        public static async Task SetParkingSpotsAsync(int garageCapacity, List<Vehicle> vehicles)
+        {
+            await using var writer = new StreamWriter(ParkingSpotsFilePath);
+            var list = new List<ParkingSpot>();
+            for (int i = 1; i <= garageCapacity; i++)
+            {
+                var spot = new ParkingSpot { Id = i, IsAvailable = true, ParkedVehicle = null };
+                var vehicle = vehicles.FirstOrDefault(v => v.ParkingSpotNumber == i);
+                if (vehicle != null)
+                {
+                    spot.IsAvailable = false;
+                    spot.ParkedVehicle = vehicle;
+                }
+                list.Add(spot);
+            }
+            var jsonToWrite = JsonConvert.SerializeObject(list, Formatting.Indented);
+            await writer.WriteAsync(jsonToWrite);
+        }
+        #endregion
+
+        #region EditParkingSpot
+
+        /// <summary>
+        /// Provided an edited parking spot. The method will replace the existing spot with the same id with the provided one. 
+        /// </summary>
+        /// <param name="parkingSpot"></param>
+        /// <returns>Void</returns>
+        public static async Task EditParkingSpotAsync(ParkingSpot parkingSpot)
+        {
+            var list = await GetParkingSpotsAsync();
+            var spot = list.FirstOrDefault(s => s.Id == parkingSpot.Id);
+            if (spot == null) return;
+            list.Remove(spot);
+            list.Add(parkingSpot);
+
+            await using var writer = new StreamWriter(ParkingSpotsFilePath);
+            var jsonToWrite = JsonConvert.SerializeObject(list, Formatting.Indented);
+            await writer.WriteAsync(jsonToWrite);
+        }
+        #endregion
+
+        #region GetParkingSpots
+
+        /// <summary>
+        /// Reads the file that contains the parking spots and converts it into list of parking spots. 
+        /// </summary>
+        /// <returns>List of all parking spots in the database</returns>
+        public static async Task<List<ParkingSpot>> GetParkingSpotsAsync()
+        {
+            return await ReadFileAsync<ParkingSpot>(ParkingSpotsFilePath);
+        }
+        #endregion
+
+
         #region HandleFiles
         private static async Task<List<T>> ReadFileAsync<T>(string path)
         {
@@ -141,7 +205,6 @@ namespace Persistence
         {
             var list = await ReadFileAsync<T>(path);
             list.Add(vehicle);
-            
             var jsonToWrite = JsonConvert.SerializeObject(list, Formatting.Indented);
             await using var writer = new StreamWriter(path, false);
            

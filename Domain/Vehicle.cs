@@ -9,5 +9,6 @@ namespace Domain
         public string Model { get; set; }
         public int Year { get; set; }
         public Color Color { get; set; }
+        public int ParkingSpotNumber { get; set; }
     }
 }

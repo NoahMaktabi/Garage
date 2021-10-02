@@ -4,34 +4,49 @@
     "Make": "Volvo",
     "Model": "S60",
     "Year": 2010,
-    "Color": "Blue"
+    "Color": "Blue",
+    "Type": 0,
+    "FuelType": 0,
+    "ParkingSpotNumber": 1
   },
   {
     "LicensePlate": "ADD123",
     "Make": "Volvo",
     "Model": "C90",
     "Year": 2012,
-    "Color": "Wheat"
+    "Color": "Wheat",
+    "Type": 1,
+    "FuelType": 2,
+    "ParkingSpotNumber": 2
   },
   {
     "LicensePlate": "AYT123",
     "Make": "Volvo",
     "Model": "D80",
     "Year": 2014,
-    "Color": "Black"
+    "Color": "Black",
+    "Type": 2,
+    "FuelType": 1,
+    "ParkingSpotNumber": 3
   },
   {
     "LicensePlate": "AKJ123",
     "Make": "Volvo",
     "Model": "V40",
     "Year": 2011,
-    "Color": "White"
+    "Color": "White",
+    "Type": 2,
+    "FuelType": 1,
+    "ParkingSpotNumber": 4
   },
   {
     "LicensePlate": "CAR232",
     "Make": "Nissan",
     "Model": "Sunny",
     "Year": 2010,
-    "Color": "AliceBlue"
+    "Color": "AliceBlue",
+    "Type": 3,
+    "FuelType": 0,
+    "ParkingSpotNumber":5
   }
 ]

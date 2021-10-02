@@ -1,38 +1,44 @@
 [
   {
-    "FuelType": 0,
-    "Height": 0.0,
     "LicensePlate": "BUS123",
     "Make": "Volvo",
     "Model": "B40",
     "Year": 2016,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 6
   },
   {
-    "FuelType": 0,
-    "Height": 0.0,
     "LicensePlate": "BUS133",
     "Make": "Volvo",
     "Model": "B40",
     "Year": 2018,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 7
   },
   {
-    "FuelType": 1,
-    "Height": 2.45,
     "LicensePlate": "BUS143",
     "Make": "Volvo",
     "Model": "B40",
     "Year": 2019,
-    "Color": "Azure"
+    "Color": "Azure",
+    "ParkingSpotNumber": 8
   },
   {
-    "FuelType": 2,
-    "Height": 3.0,
     "LicensePlate": "BUS777",
     "Make": "Volvo",
     "Model": "B99",
     "Year": 2016,
-    "Color": "White"
+    "Color": "White",
+    "ParkingSpotNumber": 9
+  },
+  {
+    "FuelType": 1,
+    "Height": 3.6,
+    "LicensePlate": "BUS987",
+    "Make": "MAN",
+    "Model": "ManPower",
+    "Year": 2001,
+    "Color": "Black",
+    "ParkingSpotNumber": 20
   }
 ]

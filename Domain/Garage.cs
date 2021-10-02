@@ -6,7 +6,7 @@ namespace Domain
     public class Garage<T> : IEnumerable<T> where T : Vehicle
     {
         public int Capacity { get; set; }
-        public IEnumerable<T> Vehicles { get; set; }
+        public List<T> Vehicles { get; set; }
         public List<ParkingSpot> ParkingSpots { get; set; }
         
         
