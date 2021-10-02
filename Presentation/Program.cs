@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Threading.Tasks;
 using Domain;
 using Domain.Vehicles;
@@ -14,13 +15,19 @@ namespace Presentation
     {
         private static async Task Main(string[] args)
         {
-            await DataHandler.AddToParkedVehicles(newBus, VehicleType.Bus);
-
-            var list = await DataHandler.GetParkedVehicles();
+            var list = await DataHandler.GetParkedVehiclesAsync();
             list.ForEach(c =>
             {
                 Console.WriteLine(c.LicensePlate);
             });
+            
+            //await DataHandler.AddToParkedVehiclesAsync(nCar, VehicleType.Car);
+            //list = await DataHandler.GetParkedVehiclesAsync();
+            //list.ForEach(c =>
+            //{
+            //    Console.WriteLine(c.LicensePlate);
+            //});
+
         }
     }
 }
