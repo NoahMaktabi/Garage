@@ -7,7 +7,7 @@ namespace Presentation.Helpers
     {
         public static Truck GetTruckDetails()
         {
-            var truck = (Truck)GetVehicleDetails();
+            var truck = GetVehicleDetails<Truck>();
             truck.Height = InputHandler.GetVehicleHeight();
             truck.CoolerTruck = InputHandler.GetBoolValue("Is the truck a cooler truck?");
             truck.WithTrailer = InputHandler.GetBoolValue("Does the truck have a trailer?");
@@ -16,7 +16,7 @@ namespace Presentation.Helpers
         }
         public static Bus GetBusDetails()
         {
-            var bus = (Bus)GetVehicleDetails();
+            var bus = GetVehicleDetails<Bus>();
             bus.Height = InputHandler.GetVehicleHeight();
             /*
              * Input handlers for bus properties
@@ -26,7 +26,7 @@ namespace Presentation.Helpers
         }
         public static Car GetCarDetails()
         {
-            var car = (Car)GetVehicleDetails();
+            var car = GetVehicleDetails<Car>();
             /*
              * Input handlers for car properties
              */
@@ -35,9 +35,9 @@ namespace Presentation.Helpers
         }
 
 
-        private static Vehicle GetVehicleDetails()
+        private static T GetVehicleDetails<T>() where T : Vehicle
         {
-            var vehicle = new Vehicle
+            var vehicle = new
             {
                 LicensePlate = InputHandler.GetLicensePlate(),
                 Make = InputHandler.GetString(prompt: "Please enter the brand/manufacturer of the vehicle"),
@@ -45,7 +45,7 @@ namespace Presentation.Helpers
                 Year = InputHandler.GetYear(),
                 //Color input should be implemented
             };
-            return vehicle;
+            return vehicle as T;
         }
     }
 }
