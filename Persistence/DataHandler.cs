@@ -10,11 +10,11 @@ namespace Persistence
 {
     public static class DataHandler
     {
-        private const string CarFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedCars.json";
-        private const string TruckFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedTrucks.json";
-        private const string RvFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedRvs.json";
-        private const string McFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedMcs.json";
-        private const string BusFilePath = @"C:\Users\mctab\Desktop\Cex\Garage\Persistence\ParkedBuses.json";
+        private const string CarFilePath = @"..\..\..\..\Persistence\ParkedCars.json";
+        private const string TruckFilePath = @"..\..\..\..\Persistence\ParkedTrucks.json";
+        private const string RvFilePath = @"..\..\..\..\Persistence\ParkedRvs.json";
+        private const string McFilePath = @"..\..\..\..\Persistence\ParkedMcs.json";
+        private const string BusFilePath = @"..\..\..\..\Persistence\ParkedBuses.json";
 
 
         public static async Task AddToParkedVehicles<T>(T vehicle, VehicleType vType) where T : Vehicle

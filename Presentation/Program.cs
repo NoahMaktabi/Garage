@@ -14,7 +14,13 @@ namespace Presentation
     {
         private static async Task Main(string[] args)
         {
+            await DataHandler.AddToParkedVehicles(newBus, VehicleType.Bus);
 
+            var list = await DataHandler.GetParkedVehicles();
+            list.ForEach(c =>
+            {
+                Console.WriteLine(c.LicensePlate);
+            });
         }
     }
 }

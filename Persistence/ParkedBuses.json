@@ -1,5 +1,7 @@
 [
   {
+    "FuelType": 0,
+    "Height": 0.0,
     "LicensePlate": "BUS123",
     "Make": "Volvo",
     "Model": "B40",
@@ -7,6 +9,8 @@
     "Color": "Azure"
   },
   {
+    "FuelType": 0,
+    "Height": 0.0,
     "LicensePlate": "BUS133",
     "Make": "Volvo",
     "Model": "B40",
@@ -21,5 +25,14 @@
     "Model": "B40",
     "Year": 2019,
     "Color": "Azure"
+  },
+  {
+    "FuelType": 2,
+    "Height": 3.0,
+    "LicensePlate": "BUS777",
+    "Make": "Volvo",
+    "Model": "B99",
+    "Year": 2016,
+    "Color": "White"
   }
 ]
