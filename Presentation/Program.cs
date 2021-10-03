@@ -21,31 +21,12 @@ namespace Presentation
             var garage = new Garage<Vehicle>();
             var manager = new GarageManagement(garage, 50);
 
-            //var list = await DataHandler.GetParkedVehiclesAsync();
-            foreach (var vehicle in garage)
-            {
-                Console.WriteLine(vehicle.LicensePlate);
-            }
             Console.WriteLine($"Available spots: {garage.ParkingSpots.Count(s => s.IsAvailable)}");
-            var bus = new Bus
-            {
-                LicensePlate = "BUS987",
-                Color = Color.Black,
-                Make = "MAN",
-                Model = "ManPower",
-                Year = 2001,
-                FuelType = FuelType.Diesel,
-                Height = 3.6
-            };
 
             IVehicleDetailsGetter getter = new VehicleDetailsGetter();
             var car = getter.GetCarDetails();
-            car.GetType().Name.ShowAnimatedText(4);
-            car.FuelType.ToString().ShowAnimatedText(4);
-            car.Type.ToString().ShowAnimatedText(4);
-            car.LicensePlate.ShowAnimatedText(4);
-            car.Color.ToString().ShowAnimatedText(4);
-            car.Year.ToString().ShowAnimatedText(4);
+            IVehicleDisplay display = new VehicleDisplay();
+            display.ShowVehicleDetails(car);
 
             // var response = await manager.ParkAsync(bus);
 
