@@ -19,7 +19,7 @@ namespace Presentation
         private static async Task Main(string[] args)
         {
             var garage = new Garage<Vehicle>();
-            var manager = new GarageManagement(garage, 50);
+            var manager = new GarageManager(garage, 50);
 
             Console.WriteLine($"Available spots: {garage.ParkingSpots.Count(s => s.IsAvailable)}");
 

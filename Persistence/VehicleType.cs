@@ -7,5 +7,6 @@
         Mc,
         Rv,
         Bus,
+        All,
     }
 }
