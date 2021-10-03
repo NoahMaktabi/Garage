@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Features;
@@ -24,7 +25,6 @@ namespace Application
 
         #region ParkVehicle
 
-        
         /// <summary>
         /// Provide a vehicle to park. The method will check for available spots
         /// in the garage and add the vehicle to the database. The method will also reserve a parking spot in the database for the vehicle. 
@@ -35,6 +35,7 @@ namespace Application
         {
             return await Park.ParkVehicleAsync(_garage, vehicle);
         }
+
         #endregion
 
         #region GetVehicle
@@ -48,6 +49,7 @@ namespace Application
         {
             return _garage.FirstOrDefault(v => v.LicensePlate == licensePlate);
         }
+
         #endregion
 
         #region GetVehiclesByType
@@ -69,6 +71,26 @@ namespace Application
                 VehicleType.Mc => _garage.Vehicles.Where(v => v is Motorcycle).ToList(),
                 _ => null,
             };
+        }
+
+        #endregion
+
+        #region Search
+        /// <summary>
+        /// Find and return parked vehicles that matches the search query
+        /// Searchable properties: Model, Make, Year
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>Returns a list of vehicles.</returns>
+        public List<Vehicle> FindParkedVehicles(string query)
+        {
+            query = query.Trim().ToLower();
+            
+            return _garage.Vehicles.FindAll(
+                vehicle => vehicle.Model.ToLower().Contains(query) ||
+                           vehicle.Make.ToLower().Contains(query) ||
+                           (int.TryParse(query, out int year) && vehicle.Year == year)
+            );
         }
         #endregion
     }
