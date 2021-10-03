@@ -20,7 +20,16 @@ namespace Presentation
         {
             var garage = new Garage<Vehicle>();
             var manager = new GarageManager(garage, 50);
-
+            
+            // Search test
+            var results = manager.FindParkedVehicles("volv");
+            foreach (var result in results)
+            {
+                Console.WriteLine(result.Make);
+                Console.WriteLine(result.Model);
+                Console.WriteLine(result.Year);
+            }
+            
             Console.WriteLine($"Available spots: {garage.ParkingSpots.Count(s => s.IsAvailable)}");
 
             IVehicleDetailsGetter getter = new VehicleDetailsGetter();
@@ -43,7 +52,6 @@ namespace Presentation
             //{
             //    Console.WriteLine(c.LicensePlate);
             //});
-
         }
     }
 }
