@@ -3,6 +3,8 @@
     "Id": 1,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": 0,
+      "FuelType": 0,
       "LicensePlate": "ABC123",
       "Make": "Volvo",
       "Model": "S60",
@@ -15,6 +17,8 @@
     "Id": 2,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": 1,
+      "FuelType": 2,
       "LicensePlate": "ADD123",
       "Make": "Volvo",
       "Model": "C90",
@@ -27,6 +31,8 @@
     "Id": 3,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": 2,
+      "FuelType": 1,
       "LicensePlate": "AYT123",
       "Make": "Volvo",
       "Model": "D80",
@@ -39,6 +45,8 @@
     "Id": 4,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": 2,
+      "FuelType": 1,
       "LicensePlate": "AKJ123",
       "Make": "Volvo",
       "Model": "V40",
@@ -51,6 +59,8 @@
     "Id": 5,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": 3,
+      "FuelType": 0,
       "LicensePlate": "CAR232",
       "Make": "Nissan",
       "Model": "Sunny",
@@ -63,6 +73,8 @@
     "Id": 6,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "FuelType": 0,
+      "Height": 0.0,
       "LicensePlate": "BUS123",
       "Make": "Volvo",
       "Model": "B40",
@@ -75,6 +87,8 @@
     "Id": 7,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "FuelType": 0,
+      "Height": 0.0,
       "LicensePlate": "BUS133",
       "Make": "Volvo",
       "Model": "B40",
@@ -87,6 +101,8 @@
     "Id": 8,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "FuelType": 0,
+      "Height": 0.0,
       "LicensePlate": "BUS143",
       "Make": "Volvo",
       "Model": "B40",
@@ -99,6 +115,8 @@
     "Id": 9,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "FuelType": 0,
+      "Height": 0.0,
       "LicensePlate": "BUS777",
       "Make": "Volvo",
       "Model": "B99",
@@ -111,6 +129,8 @@
     "Id": 10,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": null,
+      "HasAlarmSystem": false,
       "LicensePlate": "MCC111",
       "Make": "Yamaha",
       "Model": "MC12",
@@ -123,6 +143,8 @@
     "Id": 11,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": null,
+      "HasAlarmSystem": false,
       "LicensePlate": "MCC124",
       "Make": "Suzuki",
       "Model": "MC15",
@@ -135,6 +157,8 @@
     "Id": 12,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": null,
+      "HasAlarmSystem": false,
       "LicensePlate": "MCC952",
       "Make": "BMW",
       "Model": "MC16",
@@ -147,6 +171,8 @@
     "Id": 13,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Type": "Cross",
+      "HasAlarmSystem": true,
       "LicensePlate": "MCG762",
       "Make": "Yamaha",
       "Model": "H77",
@@ -159,6 +185,8 @@
     "Id": 14,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Height": 3.0,
+      "Wheels": 6,
       "LicensePlate": "RVV445",
       "Make": "BMW",
       "Model": "RV11",
@@ -171,6 +199,8 @@
     "Id": 15,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Height": 3.0,
+      "Wheels": 6,
       "LicensePlate": "RVV645",
       "Make": "Seat",
       "Model": "RV51",
@@ -183,6 +213,8 @@
     "Id": 16,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Height": 3.0,
+      "Wheels": 6,
       "LicensePlate": "RVV754",
       "Make": "Kia",
       "Model": "RV41",
@@ -195,6 +227,10 @@
     "Id": 17,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Wheels": 8,
+      "WithTrailer": false,
+      "CoolerTruck": true,
+      "Height": 2.84,
       "LicensePlate": "TRK233",
       "Make": "Scania",
       "Model": "Monster",
@@ -207,6 +243,10 @@
     "Id": 18,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Wheels": 8,
+      "WithTrailer": false,
+      "CoolerTruck": true,
+      "Height": 2.84,
       "LicensePlate": "TRK232",
       "Make": "Scania",
       "Model": "Monster",
@@ -219,12 +259,30 @@
     "Id": 19,
     "IsAvailable": false,
     "ParkedVehicle": {
+      "Wheels": 8,
+      "WithTrailer": false,
+      "CoolerTruck": true,
+      "Height": 2.84,
       "LicensePlate": "TRK234",
       "Make": "Scania",
       "Model": "Monster",
       "Year": 2015,
       "Color": "Black",
       "ParkingSpotNumber": 19
+    }
+  },
+  {
+    "Id": 20,
+    "IsAvailable": false,
+    "ParkedVehicle": {
+      "FuelType": 1,
+      "Height": 3.6,
+      "LicensePlate": "BUS987",
+      "Make": "MAN",
+      "Model": "ManPower",
+      "Year": 2001,
+      "Color": "Black",
+      "ParkingSpotNumber": 20
     }
   },
   {
@@ -376,19 +434,5 @@
     "Id": 50,
     "IsAvailable": true,
     "ParkedVehicle": null
-  },
-  {
-    "Id": 20,
-    "IsAvailable": false,
-    "ParkedVehicle": {
-      "FuelType": 1,
-      "Height": 3.6,
-      "LicensePlate": "BUS987",
-      "Make": "MAN",
-      "Model": "ManPower",
-      "Year": 2001,
-      "Color": "Black",
-      "ParkingSpotNumber": 20
-    }
   }
 ]

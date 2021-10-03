@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using Domain.Vehicles;
 
 namespace Presentation.Helpers
 {
@@ -6,6 +8,82 @@ namespace Presentation.Helpers
     {
         
 
+        public static CarType GetCarType()
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
+            const string prompt = @"Enter car's type. Enter a number representing the type of the car:
+1- Sedan.
+2- Wagon. 
+3- Pickup.
+4- Coupé.
+5- Van.
+";
+            const string invalidMsg = "Invalid input. Please enter a number between 1 - 5.";
+            var typeNumer = GetIntFromUserInput(prompt, invalidMsg, 1, 5);
+            return typeNumer switch
+            {
+                1 => CarType.Sedan,
+                2 => CarType.Wagon,
+                3 => CarType.Pickup,
+                4 => CarType.Coupé,
+                5 => CarType.Van,
+                _ => throw new NotImplementedException(),
+            };
+        }
+
+
+        public static FuelType GetFuelType()
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
+            const string prompt = @"Enter vehicle's fuel/energi type. Enter a number representing the fuel type of the vehicle:
+1- Gas (Bensin).
+2- Diesel. 
+3- Electrical.
+";
+            const string invalidMsg = "Invalid input. Please enter a number between 1 - 3.";
+            var typeNumer = GetIntFromUserInput(prompt, invalidMsg, 1, 3);
+            return typeNumer switch
+            {
+                1 => FuelType.Bensin,
+                2 => FuelType.Diesel,
+                3 => FuelType.Electrical,
+                _ => throw new NotImplementedException(),
+            };
+        }
+
+        /// <summary>
+        /// Asks the user to enter a number from a list to choose a color and returns the color.
+        /// </summary>
+        /// <returns>A color that the user chooses.</returns>
+        public static Color GetColor()
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
+            const string prompt = @"Enter vehicle's color. Enter a number representing the color of the vehicle:
+1- White.
+2- Black.
+3- Red.
+4- Yellow.
+5- Blue.
+6- Green.
+7- Gray. 
+";
+            const string invalidMsg = "Invalid input. Please enter a number between 1 - 7.";
+            var colorNumber = GetIntFromUserInput(prompt, invalidMsg, 1, 7);
+            return colorNumber switch
+            {
+                1 => Color.White,
+                2 => Color.Black,
+                3 => Color.Red,
+                4 => Color.Yellow,
+                5 => Color.Blue,
+                6 => Color.Green,
+                7 => Color.Gray,
+                _ => Color.White,
+            };
+        }
 
         public static int GetWheelsTotal()
         {

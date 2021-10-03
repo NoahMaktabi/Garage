@@ -15,7 +15,7 @@ namespace Application.Features
         /// <param name="garage"></param>
         /// <param name="vehicle"></param>
         /// <returns>A string with info about the operation. If success with a spot number. If failure with info about that.</returns>
-        public static async Task<string> ParkVehicle(Garage<Vehicle> garage, Vehicle vehicle)
+        public static async Task<string> ParkVehicleAsync(Garage<Vehicle> garage, Vehicle vehicle)
         {
             var availableSpot = garage.ParkingSpots.FirstOrDefault(s => s.IsAvailable);
             if (availableSpot == null)

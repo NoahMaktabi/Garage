@@ -191,7 +191,6 @@ namespace Persistence
         }
         #endregion
 
-
         #region HandleFiles
         private static async Task<List<T>> ReadFileAsync<T>(string path)
         {

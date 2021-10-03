@@ -9,6 +9,8 @@ using Domain;
 using Domain.Vehicles;
 using Newtonsoft.Json;
 using Persistence;
+using Presentation.Helpers;
+using Presentation.Interfaces;
 
 namespace Presentation
 {
@@ -35,6 +37,15 @@ namespace Presentation
                 FuelType = FuelType.Diesel,
                 Height = 3.6
             };
+
+            IVehicleDetailsGetter getter = new VehicleDetailsGetter();
+            var car = getter.GetCarDetails();
+            car.GetType().Name.ShowAnimatedText(4);
+            car.FuelType.ToString().ShowAnimatedText(4);
+            car.Type.ToString().ShowAnimatedText(4);
+            car.LicensePlate.ShowAnimatedText(4);
+            car.Color.ToString().ShowAnimatedText(4);
+            car.Year.ToString().ShowAnimatedText(4);
 
             // var response = await manager.ParkAsync(bus);
 
