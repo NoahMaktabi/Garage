@@ -9,7 +9,7 @@ using Persistence;
 
 namespace Application
 {
-    public class GarageManager
+    public class GarageManager : IGarageManager
     {
         private readonly Garage<Vehicle> _garage;
 
