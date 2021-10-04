@@ -12,12 +12,13 @@ namespace Persistence
     public static class DataHandler
     {
         #region PathStrings
-        private const string CarFilePath = @"..\..\..\..\Persistence\ParkedCars.json";
-        private const string TruckFilePath = @"..\..\..\..\Persistence\ParkedTrucks.json";
-        private const string RvFilePath = @"..\..\..\..\Persistence\ParkedRvs.json";
-        private const string McFilePath = @"..\..\..\..\Persistence\ParkedMcs.json";
-        private const string BusFilePath = @"..\..\..\..\Persistence\ParkedBuses.json";
-        private const string ParkingSpotsFilePath = @"..\..\..\..\Persistence\ParkingsSpots.json";
+        private static readonly string CarFilePath = Path.Combine(Environment.CurrentDirectory, "ParkedCars.json");
+        private static readonly string TruckFilePath = Path.Combine(Environment.CurrentDirectory, "ParkedTrucks.json");
+        private static readonly string RvFilePath = Path.Combine(Environment.CurrentDirectory, "ParkedRvs.json");
+        private static readonly string McFilePath = Path.Combine(Environment.CurrentDirectory, "ParkedMcs.json");
+        private static readonly string BusFilePath = Path.Combine(Environment.CurrentDirectory, "ParkedBuses.json");
+        private static readonly string ParkingSpotsFilePath = Path.Combine(Environment.CurrentDirectory, "ParkingSpots.json");
+
         #endregion
 
         #region RemoveVehicleFromFile
