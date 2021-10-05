@@ -7,6 +7,16 @@ namespace Presentation.Helpers
     public static class InputHandler
     {
         
+        public static int GetGarageCapacity(int existingVehiclesCount)
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
+            var prompt = $"How many spots do you want your garage to have? \nYou already have {existingVehiclesCount} customers so the amount should be more.";
+            var invalidMsg = $"Invalid input. Please enter a number higher than {existingVehiclesCount} as you already have so many vehicles ready to park";
+            var year = GetIntFromUserInput(prompt, invalidMsg, existingVehiclesCount, 500);
+            Console.CursorVisible = false;
+            return year;
+        }
 
         public static CarType GetCarType()
         {

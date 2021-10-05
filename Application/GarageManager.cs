@@ -14,12 +14,10 @@ namespace Application
     {
         private readonly Garage<Vehicle> _garage;
 
-        public GarageManager(Garage<Vehicle> garage, int garageCapacity)
+        public GarageManager(Garage<Vehicle> garage)
         {
             _garage = garage;
-            _garage.Vehicles = DataHandler.GetParkedVehiclesAsync().Result;
-            _garage.Capacity = garageCapacity;
-            DataHandler.SetParkingSpotsAsync(garageCapacity, _garage.Vehicles).Wait();
+            DataHandler.SetParkingSpotsAsync(_garage.Capacity, _garage.Vehicles).Wait();
             _garage.ParkingSpots = DataHandler.GetParkingSpotsAsync().Result;
         }
 
@@ -63,12 +61,12 @@ namespace Application
         {
             return vehicleType switch
             {
-                VehicleType.All => _garage.Vehicles,
-                VehicleType.Bus => _garage.Vehicles.Where(v => v is Bus).ToList(),
-                VehicleType.Car => _garage.Vehicles.Where(v => v is Car).ToList(),
-                VehicleType.Truck => _garage.Vehicles.Where(v => v is Truck).ToList(),
-                VehicleType.Rv => _garage.Vehicles.Where(v => v is RecreationalVehicle).ToList(),
-                VehicleType.Mc => _garage.Vehicles.Where(v => v is Motorcycle).ToList(),
+                VehicleType.All => _garage.Vehicles.OrderBy(v => v.ParkingSpotNumber).ToList(),
+                VehicleType.Bus => _garage.Vehicles.Where(v => v is Bus).OrderBy(v => v.ParkingSpotNumber).ToList(),
+                VehicleType.Car => _garage.Vehicles.Where(v => v is Car).OrderBy(v => v.ParkingSpotNumber).ToList(),
+                VehicleType.Truck => _garage.Vehicles.Where(v => v is Truck).OrderBy(v => v.ParkingSpotNumber).ToList(),
+                VehicleType.Rv => _garage.Vehicles.Where(v => v is RecreationalVehicle).OrderBy(v => v.ParkingSpotNumber).ToList(),
+                VehicleType.Mc => _garage.Vehicles.Where(v => v is Motorcycle).OrderBy(v => v.ParkingSpotNumber).ToList(),
                 _ => null,
             };
         }

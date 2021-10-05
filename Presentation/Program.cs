@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Application;
 using Domain;
@@ -15,13 +16,12 @@ using Presentation.Interfaces;
 
 namespace Presentation
 {
-    internal class Program
+    public  class Program
     {
         private static async Task Main(string[] args)
         {
-            var garage = new Garage<Vehicle>();
-            var manager = new GarageManager(garage, 50);
-
+            await MenuRunner.Run();
+            
             // Search test
             //var results = manager.FindParkedVehicles("volv");
             //foreach (var result in results)
@@ -41,11 +41,11 @@ namespace Presentation
             // var response = await manager.ParkAsync(bus);
 
             //Console.WriteLine("\n\n\nNew Entry");
-            Console.WriteLine($"Available spots: {garage.ParkingSpots.Count(s => s.IsAvailable)}");
-            foreach (var vehicle in garage)
-            {
-                Console.WriteLine($"RegNr: {vehicle.LicensePlate} -- ParkingSpot: {vehicle.ParkingSpotNumber}");
-            }
+            //Console.WriteLine($"Available spots: {garage.ParkingSpots.Count(s => s.IsAvailable)}");
+            //foreach (var vehicle in garage)
+            //{
+            //    Console.WriteLine($"RegNr: {vehicle.LicensePlate} -- ParkingSpot: {vehicle.ParkingSpotNumber}");
+            //}
 
             //await DataHandler.AddToParkedVehiclesAsync(nCar, VehicleType.Car);
             //list = await DataHandler.GetParkedVehiclesAsync();

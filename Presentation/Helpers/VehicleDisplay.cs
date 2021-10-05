@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
+using System.Threading;
 using Domain;
 using Domain.Vehicles;
 using Presentation.Interfaces;
@@ -13,21 +15,27 @@ namespace Presentation.Helpers
             switch (vehicle)
             {
                 case Car c:
-                    GetCarDetails(c).ShowAnimatedText(1);
+                    DisplayString(GetCarDetails(c));
                     break;
                 case Truck t:
-                    GetTruckDetails(t).ShowAnimatedText(1);
+                    DisplayString(GetTruckDetails(t));
                     break;
                 case Bus b:
-                    GetBusDetails(b).ShowAnimatedText(1);
+                    DisplayString(GetBusDetails(b));
                     break;
                 case Motorcycle m:
-                    GetMcDetails(m).ShowAnimatedText(1);
+                    DisplayString(GetMcDetails(m));
                     break;
                 case RecreationalVehicle r:
-                    GetRvDetails(r).ShowAnimatedText(1);
+                    DisplayString(GetRvDetails(r));
                     break;
             }
+        }
+
+        private static void DisplayString(string details)
+        {
+            Thread.Sleep(200);
+            Console.WriteLine(details);
         }
 
         private static string GetRvDetails(RecreationalVehicle rv)
@@ -73,6 +81,7 @@ namespace Presentation.Helpers
         private static string GetVehicleCommonDetails(Vehicle vehicle)
         {
             var info = "---------------------------";
+            info += $"\nVehicle type: {vehicle.GetType().Name}";
             info += $"\nLicense plate: {vehicle.LicensePlate}";
             info += $"\nParking spot number: {vehicle.ParkingSpotNumber}";
             info += $"\nManufacturer: {vehicle.Make}";
