@@ -133,24 +133,26 @@ namespace Persistence
         #region SetParkingSpots
 
         /// <summary>
-        /// Provide the capacity of the garage (int) and a list of parked vehicles. The method will rewrite the file
+        /// Provide the capacity of the garage (int), a list of parked vehicles  and the cost for parking. The method will rewrite the file
         /// containing the parking spots with a new list to make sure that the data is correct. 
         /// </summary>
         /// <param name="garageCapacity"></param>
         /// <param name="vehicles"></param>
+        /// <param name="parkingCostPerHour"></param>
         /// <returns>Void</returns>
-        public static async Task SetParkingSpotsAsync(int garageCapacity, List<Vehicle> vehicles)
+        public static async Task SetParkingSpotsAsync(int garageCapacity, List<Vehicle> vehicles, int parkingCostPerHour)
         {
             await using var writer = new StreamWriter(ParkingSpotsFilePath);
             var list = new List<ParkingSpot>();
-            for (int i = 1; i <= garageCapacity; i++)
+            for (var i = 1; i <= garageCapacity; i++)
             {
-                var spot = new ParkingSpot { Id = i, IsAvailable = true, ParkedVehicle = null };
+                var spot = new ParkingSpot { Id = i, IsAvailable = true, ParkedVehicle = null, CostPerHour = parkingCostPerHour};
                 var vehicle = vehicles.FirstOrDefault(v => v.ParkingSpotNumber == i);
                 if (vehicle != null)
                 {
                     spot.IsAvailable = false;
                     spot.ParkedVehicle = vehicle;
+                    spot.ParkingMeter.StartTime = DateTime.Now.AddDays(-5);
                 }
                 list.Add(spot);
             }

@@ -8,6 +8,7 @@ namespace Domain
         public int Capacity { get; set; }
         public List<T> Vehicles { get; set; }
         public List<ParkingSpot> ParkingSpots { get; set; }
+        public decimal Capital { get; set; }
         
         
         public IEnumerator<T> GetEnumerator()

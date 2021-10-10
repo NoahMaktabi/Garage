@@ -24,6 +24,8 @@ namespace Presentation
             
             // Search test
             //var results = manager.FindParkedVehicles("volv");
+
+            //IVehicleDetailsGetter getter = new VehicleDetailsGetter();
         }
     }
 }
