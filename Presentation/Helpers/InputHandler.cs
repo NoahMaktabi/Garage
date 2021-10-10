@@ -6,7 +6,28 @@ namespace Presentation.Helpers
 {
     public static class InputHandler
     {
-        
+        public static int GetParkingCost()
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
+            const string prompt = "What is the cost of parking per hour in your garage? Enter a positive number";
+            var invalidMsg = $"Invalid input. Please enter a positive number between 1 - 200!";
+            var costPerHour = GetIntFromUserInput(prompt, invalidMsg, 1, 200);
+            Console.CursorVisible = false;
+            return costPerHour;
+        }
+
+        public static int GetGarageCapital()
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
+            const string prompt = "What is the garage's start capital? Enter a positive number";
+            var invalidMsg = $"Invalid input. Please enter a positive number!";
+            var capital = GetIntFromUserInput(prompt, invalidMsg, 0, 9999999);
+            Console.CursorVisible = false;
+            return capital;
+        }
+
         public static int GetGarageCapacity(int existingVehiclesCount)
         {
             Console.Clear();

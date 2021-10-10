@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Domain;
 using Domain.Vehicles;
@@ -24,6 +25,7 @@ namespace Application.Features
             availableSpot.IsAvailable = false;
             vehicle.ParkingSpotNumber = availableSpot.Id;
             availableSpot.ParkedVehicle = vehicle;
+            availableSpot.ParkingMeter.StartTime = DateTime.Now;
             await DataHandler.EditParkingSpotAsync(availableSpot);
 
             switch (vehicle)

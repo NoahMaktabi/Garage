@@ -14,10 +14,10 @@ namespace Application
     {
         private readonly Garage<Vehicle> _garage;
 
-        public GarageManager(Garage<Vehicle> garage)
+        public GarageManager(Garage<Vehicle> garage, int parkingCostPerHour)
         {
             _garage = garage;
-            DataHandler.SetParkingSpotsAsync(_garage.Capacity, _garage.Vehicles).Wait();
+            DataHandler.SetParkingSpotsAsync(_garage.Capacity, _garage.Vehicles, parkingCostPerHour).Wait();
             _garage.ParkingSpots = DataHandler.GetParkingSpotsAsync().Result;
         }
 
@@ -32,6 +32,22 @@ namespace Application
         public async Task<string> ParkAsync(Vehicle vehicle)
         {
             return await Park.ParkVehicleAsync(_garage, vehicle);
+        }
+
+        #endregion
+
+        #region RemoveVehicle
+
+        /// <summary>
+        /// Provide a vehicle to remove from the garage. The method will find the vehicle in the garage and remove it
+        /// from the database. The method will also make the parking spot available. Also count the time for the vehicles stay in the garage
+        /// and count the cost based on the time. The cost is then added to the garage capital.  
+        /// </summary>
+        /// <param name="licensePlate"></param>
+        /// <returns>A string with info about the operation. The cost of the park and the total park time.</returns>
+        public async Task<string> RemoveVehicle(string licensePlate)
+        {
+            return await Remove.RemoveVehicleAsync(_garage, this ,  licensePlate);
         }
 
         #endregion
@@ -90,6 +106,16 @@ namespace Application
                            (int.TryParse(query, out int year) && vehicle.Year == year)
             );
         }
+        #endregion
+
+        #region GarageStatistik
+
+        public decimal GetCapital() => _garage.Capital;
+
+        public int GetAvailableSpots() => _garage.ParkingSpots.Count(s => s.IsAvailable);
+        public int GetTotalSpots() => _garage.ParkingSpots.Count;
+        public int GetUsedSpots() => _garage.ParkingSpots.Count(s => s.IsAvailable == false);
+
         #endregion
     }
 }

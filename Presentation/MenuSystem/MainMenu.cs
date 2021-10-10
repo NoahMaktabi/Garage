@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Application;
 using Domain;
 using Presentation.Helpers;
@@ -14,11 +15,15 @@ namespace Presentation.MenuSystem
         {
             _manager = manager;
         }
-        public void Run()
+        public async Task Run()
         {
-            const string prompt = @"
+            var prompt = @"
 Welcome to your garage. What would you like to do?
 (Use the arrow keys to cycle through options and press enter to select an option)";
+            prompt += $"\nThe capital of the garage is {_manager.GetCapital():C2}";
+            prompt += $"\nYou have {_manager.GetTotalSpots()} parking spots in your garage.";
+            prompt += $"\nYou have {_manager.GetUsedSpots()} used/unavailable parking spots.";
+            prompt += $"\nYou have {_manager.GetAvailableSpots()} available parking spots.";
 
 
             string[] options =
@@ -36,13 +41,13 @@ Welcome to your garage. What would you like to do?
             switch (selectedIndex)
             {
                 case 0:
-                    ShowParkedVehicles(_manager);
+                    await ShowParkedVehicles(_manager);
                     break;
                 case 1:
                     ParkVehicle();
                     break;
                 case 2:
-                    RemoveVehicle();
+                    await RemoveVehicle();
                     break;
                 case 3:
                     ViewGarageStatus();
@@ -61,12 +66,12 @@ Welcome to your garage. What would you like to do?
         }
 
         
-        private void ShowParkedVehicles(IGarageManager manager)
+        private async Task ShowParkedVehicles(IGarageManager manager)
         {
             var showVehiclesMenu = new ShowVehiclesMenu(manager);
             while (!showVehiclesMenu.Run())
             {
-                this.Run();
+                await this.Run();
             }
         }
         private void ParkVehicle()
@@ -74,9 +79,16 @@ Welcome to your garage. What would you like to do?
             throw new NotImplementedException();
         }
 
-        private void RemoveVehicle()
+        private async Task RemoveVehicle()
         {
-            throw new NotImplementedException();
+            var licensePlate = InputHandler.GetLicensePlate();
+            var vehicle = _manager.GetVehicleByLicensePlate(licensePlate);
+            
+            var result = await _manager.RemoveVehicle(licensePlate);
+            result.ShowAnimatedText(5);
+            "Press any key to go back to main menu...".ShowAnimatedText(10);
+            Console.ReadKey(true);
+            await this.Run();
         }
 
         private void ViewGarageStatus()

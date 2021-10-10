@@ -21,13 +21,15 @@ namespace Presentation
             var garage = new Garage<Vehicle>
             {
                 Vehicles = await DataHandler.GetParkedVehiclesAsync(),
+                Capital = InputHandler.GetGarageCapital(),
             };
+            var costPerHour = InputHandler.GetParkingCost();
             var garageCapacity = InputHandler.GetGarageCapacity(garage.Vehicles.Count);
             garage.Capacity = garageCapacity;
 
-            IGarageManager manager = new GarageManager(garage);
+            IGarageManager manager = new GarageManager(garage, costPerHour);
             var mainMenu = new MainMenu(manager);
-            mainMenu.Run();
+            await mainMenu.Run();
         }
     }
 }
