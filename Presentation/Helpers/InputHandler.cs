@@ -210,6 +210,21 @@ namespace Presentation.Helpers
             Console.CursorVisible = false;
             return plate?.ToUpper().Trim();
         }
+        
+        /// <summary>
+        /// Asks the user to provide a vehicle model, make or year.
+        /// </summary>
+        /// <returns>Query string.</returns>
+        public static string GetSearchQuery()
+        {
+            Console.Clear();
+            "Please enter a model, make or year to search for.".ShowAnimatedText(5);
+            Console.CursorVisible = true;
+            var query = Console.ReadLine();
+            Console.CursorVisible = false;
+            
+            return query;
+        }
 
         private static bool IsValidLicensePlate(string licensePlate)
         {

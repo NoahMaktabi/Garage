@@ -38,6 +38,14 @@ namespace Application
         /// <returns>Returns a list of vehicle of the provided type.</returns>
         List<Vehicle> GetParkedVehicles(VehicleType vehicleType);
 
+        /// <summary>
+        /// Find and return parked vehicles that matches the search query
+        /// Searchable properties: Model, Make, Year
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>Returns a list of vehicles.</returns>
+        public List<Vehicle> FindParkedVehicles(string query);
+
         decimal GetCapital();
         int GetAvailableSpots();
         int GetTotalSpots();

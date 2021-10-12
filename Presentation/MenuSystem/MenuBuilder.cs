@@ -61,7 +61,7 @@ namespace Presentation.MenuSystem
 
                 var keyInfo = Console.ReadKey(true);
                 keyPressed = keyInfo.Key;
-
+                
                 if (keyPressed == ConsoleKey.UpArrow)
                 {
                     _selectedIndex--;

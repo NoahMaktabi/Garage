@@ -15,7 +15,7 @@ namespace Presentation
             "Welcome to your garage......".ShowAnimatedText(30);
             "The application is loading".ShowAnimatedText(30);
 #pragma warning disable CA1416 // Validate platform compatibility
-            Console.WindowHeight = 50;
+            //Console.WindowHeight = 50
 #pragma warning restore CA1416 // Validate platform compatibility
             "*********".ShowAnimatedText(350);
             var garage = new Garage<Vehicle>
