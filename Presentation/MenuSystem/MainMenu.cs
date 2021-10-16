@@ -101,13 +101,15 @@ Welcome to your garage. What would you like to do?
             throw new NotImplementedException();
         }
 
-        private void SearchVehicles()
+        private async Task SearchVehicles()
         {
             var query = InputHandler.GetSearchQuery();
             var vehicles = _manager.FindParkedVehicles(query);
             
             var showSearchHits = new ShowSearchHits();
             showSearchHits.Run(vehicles);
+            Console.ReadKey(true);
+            await this.Run();
         }
 
         
