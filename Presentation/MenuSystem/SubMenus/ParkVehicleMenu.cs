@@ -29,7 +29,8 @@ namespace Presentation.MenuSystem.SubMenus
                 "Truck",
                 "Bus",
                 "RV",
-                "Motorcycle"
+                "Motorcycle",
+                "Return to main menu"
             };
 
             var menu = new MenuBuilder(prompt, options);
@@ -57,6 +58,8 @@ namespace Presentation.MenuSystem.SubMenus
                     var mc = _getter.GetMcDetails();
                     result = await _manager.ParkAsync(mc);
                     break;
+                case 5:
+                    return false;
             }
             
             result.ShowAnimatedText(5);
