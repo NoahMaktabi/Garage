@@ -103,7 +103,11 @@ Welcome to your garage. What would you like to do?
 
         private void SearchVehicles()
         {
-            throw new NotImplementedException();
+            var query = InputHandler.GetSearchQuery();
+            var vehicles = _manager.FindParkedVehicles(query);
+            
+            var showSearchHits = new ShowSearchHits();
+            showSearchHits.Run(vehicles);
         }
 
         
