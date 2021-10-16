@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Application;
 using Domain;
 using Presentation.Helpers;
+using Presentation.Interfaces;
 using Presentation.MenuSystem.SubMenus;
 
 namespace Presentation.MenuSystem
@@ -10,10 +11,12 @@ namespace Presentation.MenuSystem
     public class MainMenu
     {
         private readonly IGarageManager _manager;
+        private readonly IVehicleDisplay _display;
 
         public MainMenu(IGarageManager manager)
         {
             _manager = manager;
+            _display = new VehicleDisplay();
         }
         public async Task Run()
         {
@@ -96,9 +99,24 @@ Welcome to your garage. What would you like to do?
             throw new NotImplementedException();
         }
 
-        private void FindVehicleByLicensePlate()
+        private async Task FindVehicleByLicensePlate()
         {
-            throw new NotImplementedException();
+            var licensePlate = InputHandler.GetLicensePlate();
+            var vehicle = _manager.GetVehicleByLicensePlate(licensePlate);
+            
+            if (vehicle == null)
+            {
+                "No vehicle was found with provided license plate.".ShowAnimatedText(10);
+            }
+            else
+            {
+                "The following vehicle was found!".ShowAnimatedText(10);
+                _display.ShowVehicleDetails(vehicle);
+            }
+            
+            "Press any key to go back to main menu...".ShowAnimatedText(10);
+            Console.ReadKey(true);
+            await this.Run();
         }
 
         private async Task SearchVehicles()
