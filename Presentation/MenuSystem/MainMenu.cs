@@ -12,11 +12,13 @@ namespace Presentation.MenuSystem
     {
         private readonly IGarageManager _manager;
         private readonly IVehicleDisplay _display;
+        private readonly IVehicleDetailsGetter _getter;
 
         public MainMenu(IGarageManager manager)
         {
             _manager = manager;
             _display = new VehicleDisplay();
+            _getter = new VehicleDetailsGetter();
         }
         public async Task Run()
         {
@@ -34,7 +36,6 @@ Welcome to your garage. What would you like to do?
                 "View parked vehicles", 
                 "Park a vehicle", 
                 "Remove a vehicle", 
-                "View garage status",
                 "Find a vehicle by license plate",
                 "Search vehicles",
                 "Exit",
@@ -47,21 +48,18 @@ Welcome to your garage. What would you like to do?
                     await ShowParkedVehicles(_manager);
                     break;
                 case 1:
-                    ParkVehicle();
+                    await ParkVehicle();
                     break;
                 case 2:
                     await RemoveVehicle();
                     break;
                 case 3:
-                    ViewGarageStatus();
+                    await FindVehicleByLicensePlate();
                     break;
                 case 4:
-                    FindVehicleByLicensePlate();
+                    await SearchVehicles();
                     break;
                 case 5:
-                    SearchVehicles();
-                    break;
-                case 6:
                     ExitApp();
                     break;
                 
@@ -77,9 +75,14 @@ Welcome to your garage. What would you like to do?
                 await this.Run();
             }
         }
-        private void ParkVehicle()
+        private async Task ParkVehicle()
         {
-            throw new NotImplementedException();
+            var parkMenu = new ParkVehicleMenu(_manager);
+
+            while (! await parkMenu.Run())
+            {
+                await this.Run();
+            }
         }
 
         private async Task RemoveVehicle()
@@ -92,11 +95,6 @@ Welcome to your garage. What would you like to do?
             "Press any key to go back to main menu...".ShowAnimatedText(10);
             Console.ReadKey(true);
             await this.Run();
-        }
-
-        private void ViewGarageStatus()
-        {
-            throw new NotImplementedException();
         }
 
         private async Task FindVehicleByLicensePlate()
