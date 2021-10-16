@@ -120,7 +120,7 @@ namespace Presentation.Helpers
         {
             Console.Clear();
             Console.CursorVisible = true;
-            const string msg = "How many wheel does your vehicle have?";
+            const string msg = "How many wheels does your vehicle have?";
             var invalidMsg = $"Invalid input. Please enter a number between 2 - 30";
             var year = GetIntFromUserInput(msg, invalidMsg, 2, 30);
             Console.CursorVisible = false;
