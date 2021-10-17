@@ -46,3 +46,12 @@ Here we create a Menu class inside MenuSystem folder.
 In this class a modern menu is defined. The menu will only allow for selections via pressing up or down arrows. 
 The user won't be able to type input unless it's necessary. 
 The Presentation layer has a dependency on Application.
+
+
+The app will start by asking the user to enter the capital (available cash) of the garage, then to enter the price for parking per hour and lastly the capacity of the garage. 
+Based on the entered capacity, the app will create parking spots. The app will check to see if there are vehicles that are waitning to be added to the garage "Seeded vehicles", 
+then the app will assign parking spots to those vehicles. 
+
+The app will then present some statistics about the garage and a menu with different options. 
+
+The app even accounts for time that vehicles stay in the garage and charge the vehicle according to the parking price upon leaving the garage. 
