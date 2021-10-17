@@ -21,11 +21,6 @@ namespace Presentation
         private static async Task Main(string[] args)
         {
             await MenuRunner.Run();
-            
-            // Search test
-            //var results = manager.FindParkedVehicles("volv");
-
-            //IVehicleDetailsGetter getter = new VehicleDetailsGetter();
         }
     }
 }
